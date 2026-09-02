@@ -1,0 +1,23 @@
+{
+  "name": "appstrate",
+  "owner": { "name": "Appstrate", "url": "https://appstrate.dev" },
+  "metadata": {
+    "description": "Official Appstrate plugins for Claude Code",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "appstrate",
+      "description": "Your Appstrate organization's skills, synced every session (published versions only; requires the appstrate CLI, logged in with a pinned org and space)",
+      "homepage": "https://github.com/appstrate/appstrate/tree/main/apps/cli#appstrate-skills",
+      "category": "productivity",
+      "keywords": ["appstrate", "skills", "sync"],
+      "source": {
+        "source": "command",
+        "command": "appstrate skills sync --target claude-plugin --target codex --print-path",
+        "timeout": 120,
+        "mode": "copy"
+      }
+    }
+  ]
+}
