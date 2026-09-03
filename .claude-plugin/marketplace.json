@@ -1,6 +1,9 @@
 {
   "name": "appstrate",
-  "owner": { "name": "Appstrate", "url": "https://appstrate.dev" },
+  "owner": {
+    "name": "Appstrate",
+    "url": "https://appstrate.dev"
+  },
   "metadata": {
     "description": "Official Appstrate plugins for Claude Code",
     "pluginRoot": "./plugins"
@@ -8,13 +11,17 @@
   "plugins": [
     {
       "name": "appstrate",
-      "description": "Your Appstrate organization's skills, synced every session (published versions only; requires the appstrate CLI, logged in with a pinned org and space)",
+      "description": "Your Appstrate organization's skills, synced every session. Installs on a fresh machine; run `appstrate login` once (the plugin's setup skill says how)",
       "homepage": "https://github.com/appstrate/appstrate/tree/main/apps/cli#appstrate-skills",
       "category": "productivity",
-      "keywords": ["appstrate", "skills", "sync"],
+      "keywords": [
+        "appstrate",
+        "skills",
+        "sync"
+      ],
       "source": {
         "source": "command",
-        "command": "appstrate skills sync --target claude-plugin --target codex --print-path",
+        "command": "if command -v appstrate >/dev/null 2>&1; then exec appstrate skills sync --target claude-plugin --target codex --print-path; else exec npx -y appstrate@latest skills sync --target claude-plugin --target codex --print-path; fi",
         "timeout": 120,
         "mode": "copy"
       }
