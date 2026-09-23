@@ -12,7 +12,7 @@
     {
       "name": "appstrate",
       "description": "Your Appstrate organization's skills, synced every session. Installs on a fresh machine; run `appstrate login` once (the plugin's setup skill says how)",
-      "homepage": "https://github.com/appstrate/appstrate/tree/main/apps/cli#appstrate-skills",
+      "homepage": "https://github.com/appstrate/appstrate/tree/main/apps/cli#appstrate-packages-sync",
       "category": "productivity",
       "keywords": [
         "appstrate",
@@ -21,7 +21,7 @@
       ],
       "source": {
         "source": "command",
-        "command": "if command -v appstrate >/dev/null 2>&1; then exec appstrate skills sync --target claude-plugin --target codex --print-path; else exec npx -y appstrate@latest skills sync --target claude-plugin --target codex --print-path; fi",
+        "command": "if command -v appstrate >/dev/null 2>&1; then exec appstrate packages sync --target claude-plugin --target codex --print-path; else exec npx -y appstrate@latest packages sync --target claude-plugin --target codex --print-path; fi",
         "timeout": 120,
         "mode": "copy"
       }
